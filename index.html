@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Tech | Ropa Deportiva & IA en San Cristóbal</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bs-primary: #db2777; /* Pink accent */
+            --bs-primary-rgb: 219, 39, 119;
+            --accent-pink: #f472b6;
+            --light-pink-bg: #fdf2f8;
+            --pastel-pink-soft: #fce7f3;
+            --neutral-gray: #f8fafc;
+            --text-dark: #1e293b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .navbar-brand {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Navbar Customization */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--light-pink-bg) 0%, #fae8ff 100%);
+            padding: 110px 0 90px 0;
+            position: relative;
+        }
+
+        .badge-trust {
+            background-color: rgba(219, 39, 119, 0.1);
+            color: var(--bs-primary);
+            font-weight: 600;
+            border-radius: 50rem;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Card Customizations */
+        .card-custom {
+            border: none;
+            border-radius: 1.25rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #ffffff;
+            box-shadow: 0 10px 25px -5px rgba(219, 39, 119, 0.05);
+        }
+
+        .card-custom:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(219, 39, 119, 0.12);
+        }
+
+        /* Floating Widgets */
+        .floating-widgets {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        .whatsapp-float {
+            background-color: #25d366;
+        }
+
+        .instagram-float {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #df497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        /* Simulator Widget Box */
+        .simulator-box {
+            background: var(--neutral-gray);
+            border-radius: 1.5rem;
+            border: 1px solid #fbcfe8;
+            padding: 35px;
+            box-shadow: 0 15px 30px rgba(219, 39, 119, 0.04);
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #0f172a;
+            color: #cbd5e1;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 70px 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary fs-3 d-flex align-items-center gap-2" href="#">
+                <i class="fa-solid fa-bolt text-primary"></i> Performance<span class="text-dark">Tech</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center gap-3">
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#ropa">Ropa Deportiva</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#academia">Academia IA & n8n</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#simulador">Simulador IA</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#faq">FAQ</a></li>
+                    <li class="nav-item">
+                        <a href="https://wa.me/584241706327" target="_blank" class="btn btn-primary rounded-pill px-4 shadow-sm text-white">
+                            <i class="fa-brands fa-whatsapp me-2"></i>Contacto Directo
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section mt-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="d-inline-flex align-items-center gap-2 badge-trust mb-3">
+                        <i class="fa-solid fa-location-dot"></i> San Cristóbal, Táchira, Venezuela
+                    </div>
+                    <h1 class="display-4 fw-extrabold mb-3 lh-tight">Viste con Estilo.<br><span class="text-primary">Automatiza tu Futuro.</span></h1>
+                    <p class="lead text-muted mb-4">Indumentaria deportiva de alto rendimiento y formación práctica en Inteligencia Artificial y flujos n8n para potenciar tu vida y tus negocios.</p>
+                    
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <a href="#ropa" class="btn btn-primary btn-lg rounded-pill px-4 shadow text-white">Ver Colección de Ropa</a>
+                        <a href="#academia" class="btn btn-outline-dark btn-lg rounded-pill px-4">Aprender IA & n8n</a>
+                    </div>
+
+                    <!-- Micro-fianzas / Badges -->
+                    <div class="row g-2 text-secondary small fw-medium">
+                        <div class="col-sm-6 d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-truck-fast text-primary fs-5"></i> Delivery en San Cristóbal y envíos al país
+                        </div>
+                        <div class="col-sm-6 d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-robot text-primary fs-5"></i> Asistente virtual activo (n8n)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <!-- Photorealistic simulated representation of high performance fitness & tech workstation -->
+                        <img src="https://placehold.co/600x450/fdf2f8/db2777?text=Fitness+%26+Automation+Tech" alt="Performance Tech Atleta y Tecnología" class="img-fluid rounded-4 shadow-lg w-100 object-fit-cover" style="height: 420px;">
+                        <div class="position-absolute bottom-0 start-0 m-3 p-3 bg-white rounded-3 shadow border border-light">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="bg-primary text-white rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Garantía Total</h6>
+                                    <small class="text-muted">Pago Móvil, Zelle, Efectivo & Binance</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dual Value Proposition Section -->
+    <section class="py-5 bg-white" id="concept">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">El Concepto "Performance Tech"</h2>
+                <p class="text-muted">Fusionamos el bienestar físico con el máximo rendimiento mental y profesional.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card card-custom p-4 h-100 border-start border-primary border-4">
+                        <div class="card-body">
+                            <div class="text-primary fs-1 mb-3"><i class="fa-solid fa-dumbbell"></i></div>
+                            <h3 class="h4 fw-bold mb-3">Rendimiento Físico</h3>
+                            <ul class="list-unstyled text-muted d-flex flex-column gap-2 mb-0">
+                                <li><i class="fa-solid fa-check text-primary me-2"></i> Textiles con tecnología Dry-Fit y compresión 360°.</li>
+                                <li><i class="fa-solid fa-check text-primary me-2"></i> Diseños modernos, duraderos y ergonómicos para gym o uso diario.</li>
+                                <li><i class="fa-solid fa-check text-primary me-2"></i> Ajuste perfecto diseñado para atletas exigentes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-custom p-4 h-100 border-start border-secondary border-4" style="border-color: #f472b6 !important;">
+                        <div class="card-body">
+                            <div class="text-primary fs-1 mb-3"><i class="fa-solid fa-microchip"></i></div>
+                            <h3 class="h4 fw-bold mb-3">Rendimiento Digital (IA & n8n)</h3>
+                            <ul class="list-unstyled text-muted d-flex flex-column gap-2 mb-0">
+                                <li><i class="fa-solid fa-check text-primary me-2"></i> De cero a experto: Aprende IA práctica para tu labor diaria.</li>
+                                <li><i class="fa-solid fa-check text-primary me-2"></i> Crea flujos n8n para automatizar atención al cliente y ventas en Táchira.</li>
+                                <li><i class="fa-solid fa-check text-primary me-2"></i> Escala tus operaciones comerciales 24/7 sin esfuerzo manual.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Clothing Catalog Section -->
+    <section class="py-5 bg-light" id="ropa">
+        <div class="container py-4">
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+                <div>
+                    <h2 class="fw-bold mb-1">Catálogo Destacado de Ropa</h2>
+                    <p class="text-muted mb-0">Indumentaria de alta gama disponible para entrega inmediata en San Cristóbal.</p>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-primary active" onclick="filterProducts('all')">Todos</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="filterProducts('hombre')">Hombre</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="filterProducts('mujer')">Mujer</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="filterProducts('tech')">Accesorios Tech</button>
+                </div>
+            </div>
+
+            <div class="row g-4" id="product-grid">
+                <!-- Product 1 -->
+                <div class="col-md-4 product-item" data-category="hombre">
+                    <div class="card card-custom h-100">
+                        <div class="position-relative overflow-hidden bg-white" style="height: 250px;">
+                            <img src="https://placehold.co/400x300/fdf2f8/db2777?text=Compresion+Elite+Pro" class="w-100 h-100 object-fit-cover" alt="Compresión Elite Pro">
+                            <span class="position-absolute top-0 end-0 m-3 badge bg-primary text-white">Secado Rápido</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="fw-bold">Camisa Compresión Elite Pro</h5>
+                            <p class="text-muted small">Tecnología Dry-Fit de alta ventilación, costuras reforzadas.</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="text-primary fw-bold fs-5">$25.00</span>
+                                    <span class="badge bg-white text-dark border">Quedan 2 en Talla M (SC)</span>
+                                </div>
+                                <button onclick="buyProduct('Camisa Compresión Elite Pro', '$25')" class="btn btn-primary w-100 rounded-pill text-white">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i>Comprar en 1 Clic
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-md-4 product-item" data-category="mujer">
+                    <div class="card card-custom h-100">
+                        <div class="position-relative overflow-hidden bg-white" style="height: 250px;">
+                            <img src="https://placehold.co/400x300/fce7f3/db2777?text=Leggings+Zero+Gravity" class="w-100 h-100 object-fit-cover" alt="Leggings Zero Gravity">
+                            <span class="position-absolute top-0 end-0 m-3 badge bg-success">Cero Transparencia</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="fw-bold">Leggings Zero Gravity Pro</h5>
+                            <p class="text-muted small">Elástico de alta sujeción, tela ultra suave y flexible.</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="text-primary fw-bold fs-5">$32.00</span>
+                                    <span class="badge bg-white text-dark border">Disponible en Tallas S, M, L</span>
+                                </div>
+                                <button onclick="buyProduct('Leggings Zero Gravity Pro', '$32')" class="btn btn-primary w-100 rounded-pill text-white">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i>Comprar en 1 Clic
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-md-4 product-item" data-category="tech">
+                    <div class="card card-custom h-100">
+                        <div class="position-relative overflow-hidden bg-white" style="height: 250px;">
+                            <img src="https://placehold.co/400x300/fae8ff/db2777?text=Mochila+Tech+Ergonomica" class="w-100 h-100 object-fit-cover" alt="Mochila Tech Ergonómica">
+                            <span class="position-absolute top-0 end-0 m-3 badge bg-dark text-white">Impermeable</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="fw-bold">Mochila Tech Ergonómica</h5>
+                            <p class="text-muted small">Compartimento para laptop, puerto USB integrado y tejido impermeable.</p>
+                            <div class="mt-auto">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="text-primary fw-bold fs-5">$45.00</span>
+                                    <span class="badge bg-white text-dark border">Edición Limitada</span>
+                                </div>
+                                <button onclick="buyProduct('Mochila Tech Ergonomica', '$45')" class="btn btn-primary w-100 rounded-pill text-white">
+                                    <i class="fa-solid fa-cart-shopping me-2"></i>Comprar en 1 Clic
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Paths in AI and n8n -->
+    <section class="py-5 bg-white" id="academia">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Rutas de Aprendizaje en IA y n8n</h2>
+                <p class="text-muted">Estructura modular clara diseñada para llevarte de cero a automatizar tu negocio.</p>
+            </div>
+            
+            <div class="row g-4 mb-5">
+                <!-- Module 1 -->
+                <div class="col-lg-4">
+                    <div class="card card-custom p-4 h-100">
+                        <div class="card-body">
+                            <div class="badge bg-light text-primary border border-primary mb-3">Nivel Principiante</div>
+                            <h4 class="fw-bold mb-3">1. Fundamentos IA</h4>
+                            <p class="text-muted small mb-3">Domina prompts efectivos, ChatGPT, Claude y herramientas de productividad diaria.</p>
+                            <div class="p-3 bg-light rounded-3 mb-4">
+                                <span class="fw-bold text-dark small"><i class="fa-solid fa-bolt text-warning me-2"></i>Promesa:</span>
+                                <p class="mb-0 small text-muted">Elimina 5 horas de trabajo aburrido a la semana.</p>
+                            </div>
+                            <button onclick="openBookingModal('Fundamentos IA')" class="btn btn-outline-primary w-100 rounded-pill">Reservar mi Cupo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="col-lg-4">
+                    <div class="card card-custom p-4 h-100 border border-primary shadow-sm">
+                        <div class="card-body">
+                            <div class="badge bg-primary text-white mb-3">Nivel Intermedio</div>
+                            <h4 class="fw-bold mb-3">2. Integración y Asistentes</h4>
+                            <p class="text-muted small mb-3">Conexión de APIs, generación de contenido asistido y asistentes personalizados.</p>
+                            <div class="p-3 bg-light rounded-3 mb-4">
+                                <span class="fw-bold text-dark small"><i class="fa-solid fa-bolt text-warning me-2"></i>Promesa:</span>
+                                <p class="mb-0 small text-muted">Crea tu propio asistente especializado en minutos.</p>
+                            </div>
+                            <button onclick="openBookingModal('Integración y Asistentes')" class="btn btn-primary w-100 rounded-pill text-white">Reservar mi Cupo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="col-lg-4">
+                    <div class="card card-custom p-4 h-100">
+                        <div class="card-body">
+                            <div class="badge bg-dark text-white mb-3">Avanzado / Pro</div>
+                            <h4 class="fw-bold mb-3">3. Automatización n8n</h4>
+                            <p class="text-muted small mb-3">Flujos sin código/bajo código, automatización de bases de datos, CRM y WhatsApp.</p>
+                            <div class="p-3 bg-light rounded-3 mb-4">
+                                <span class="fw-bold text-dark small"><i class="fa-solid fa-bolt text-warning me-2"></i>Promesa:</span>
+                                <p class="mb-0 small text-muted">Automatiza los procesos de tu negocio 24/7 sin personal extra.</p>
+                            </div>
+                            <button onclick="openBookingModal('Automatización n8n')" class="btn btn-outline-primary w-100 rounded-pill">Reservar mi Cupo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive n8n Simulator Widget -->
+    <section class="py-5 bg-light" id="simulador">
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="simulator-box shadow-sm">
+                        <div class="text-center mb-4">
+                            <span class="badge bg-success-subtle text-success mb-2 px-3 py-2 rounded-pill"><i class="fa-solid fa-circle-dot me-1"></i> Powered by n8n (Demo en Vivo)</span>
+                            <h3 class="fw-bold">Simulador de Automatización Inteligente</h3>
+                            <p class="text-muted small">Selecciona el rubro de tu negocio y descubre qué flujos puedes automatizar hoy mismo.</p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="businessType" class="form-label fw-semibold">Selecciona tu Rubro o Negocio:</label>
+                            <select id="businessType" class="form-select form-select-lg">
+                                <option value="gym">Gimnasio o Centro Fitness (San Cristóbal)</option>
+                                <option value="tienda">Tienda de Ropa o E-commerce</option>
+                                <option value="servicios">Agencia de Servicios / Consultoría</option>
+                                <option value="gastronomia">Restaurante / Delivery de Comida</option>
+                            </select>
+                        </div>
+
+                        <button onclick="runSimulator()" class="btn btn-primary w-100 py-3 rounded-pill fw-bold mb-4 text-white">
+                            <i class="fa-solid fa-wand-magic-sparkles me-2"></i>Calcular Flujos Recomendados
+                        </button>
+
+                        <div id="simulatorResults" class="p-3 bg-white rounded-3 border d-none">
+                            <h5 class="fw-bold text-primary mb-3"><i class="fa-solid fa-square-poll-vertical me-2"></i>Sugerencias de Automatización n8n:</h5>
+                            <div id="resultsContent" class="text-muted small d-flex flex-column gap-2">
+                                <!-- Dynamic results injected by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-white" id="faq">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Preguntas Frecuentes (FAQ)</h2>
+                <p class="text-muted">Resolvemos tus dudas sobre nuestros productos, cursos y métodos de pago locales.</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm overflow-hidden">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    ¿Necesito saber programar para el curso de n8n?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    No. El curso está diseñado desde un nivel principiante con un enfoque visual "Drag & Drop". No requieres experiencia previa en programación.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm overflow-hidden">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    ¿Cómo son las entregas de la ropa en San Cristóbal?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Contamos con delivery rápido en el casco urbano, Pueblo Nuevo, Las Lomas y entregas acordadas en zonas céntricas de San Cristóbal.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm overflow-hidden">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    ¿Qué métodos de pago aceptan?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Aceptamos Pago Móvil (tasa BCV oficial), Zelle, Efectivo en divisas y Binance Pay para tu total comodidad.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 text-white">
+        <div class="container text-center">
+            <h3 class="fw-bold mb-3"><i class="fa-solid fa-bolt text-primary"></i> Performance Tech</h3>
+            <p class="text-white-50 mb-4">Ropa Deportiva de Alto Rendimiento & Automatización IA en San Cristóbal, Táchira.</p>
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="https://instagram.com/maferfit.sc" target="_blank" class="text-white fs-4"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/584241706327" target="_blank" class="text-white fs-4"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <hr class="border-secondary my-4">
+            <p class="small text-white-50 mb-0">&copy; 2026 Performance Tech. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Widgets for WhatsApp & Instagram -->
+    <div class="floating-widgets">
+        <a href="https://instagram.com/maferfit.sc" target="_blank" class="float-btn instagram-float" title="Síguenos en Instagram @maferfit.sc">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/584241706327?text=Hola%20Performance%20Tech,%20deseo%20información%20sobre%20sus%20productos%20y%20cursos." target="_blank" class="float-btn whatsapp-float" title="Chatea por WhatsApp +584241706327">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Custom Modal for Booking / Checkout -->
+    <div class="modal fade" id="actionModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="modalTitle">Atención Inmediata</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <p class="text-muted small mb-4" id="modalSubtitle">Completa tus datos o conéctate al instante vía WhatsApp para procesar tu solicitud de forma automatizada.</p>
+                    <form id="actionForm" onsubmit="submitForm(event)">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold small">Tu Nombre y Apellido:</label>
+                            <input type="text" id="clientName" class="form-control" required placeholder="Ej. María Gómez">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold small">Teléfono / WhatsApp:</label>
+                            <input type="text" id="clientPhone" class="form-control" required placeholder="Ej. +58 414 1234567">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 fw-bold text-white">
+                            <i class="fa-brands fa-whatsapp me-2"></i>Enviar Solicitud a WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let selectedItem = "";
+
+        // Filter clothing products
+        function filterProducts(category) {
+            document.querySelectorAll('.btn-group .btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const items = document.querySelectorAll('.product-item');
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Trigger purchase modal formatting for WhatsApp
+        function buyProduct(productName, price) {
+            selectedItem = `Compra de Ropa: ${productName} (${price})`;
+            document.getElementById('modalTitle').innerText = "Comprar: " + productName;
+            document.getElementById('modalSubtitle').innerText = `Precio: ${price}. Realiza tu pedido con delivery en San Cristóbal.`;
+            new bootstrap.Modal(document.getElementById('actionModal')).show();
+        }
+
+        // Trigger booking modal for courses
+        function openBookingModal(courseName) {
+            selectedItem = `Reserva de Cupo - Curso: ${courseName}`;
+            document.getElementById('modalTitle').innerText = "Reservar Cupo: " + courseName;
+            document.getElementById('modalSubtitle').innerText = "Asegura tu cupo en nuestra academia de IA & n8n.";
+            new bootstrap.Modal(document.getElementById('actionModal')).show();
+        }
+
+        // Submit form and redirect to WhatsApp prefilled message
+        function submitForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            
+            const message = encodeURIComponent(`Hola Performance Tech, mi nombre es ${name} (${phone}). Estoy interesado en: ${selectedItem}. ¿Me dan detalles para el pago y entrega en San Cristóbal?`);
+            window.open(`https://wa.me/584241706327?text=${message}`, '_blank');
+            
+            bootstrap.Modal.getInstance(document.getElementById('actionModal')).hide();
+        }
+
+        // Interactive Simulator Logic powered by n8n mockup
+        function runSimulator() {
+            const biz = document.getElementById('businessType').value;
+            const resultsContainer = document.getElementById('simulatorResults');
+            const content = document.getElementById('resultsContent');
+            
+            resultsContainer.classList.remove('d-none');
+            
+            let flows = [];
+            if (biz === 'gym') {
+                flows = [
+                    "1. <strong>Bot de WhatsApp Automatizado:</strong> Responde dudas sobre horarios, tarifas y reservas de entrenadores en segundos.",
+                    "2. <strong>Recordatorios de Membresía:</strong> Envío automático vía API de n8n 3 días antes del vencimiento del plan.",
+                    "3. <strong>Registro de Asistencia IA:</strong> Sincronización automática de nuevos atletas a Google Sheets y CRM."
+                ];
+            } else if (biz === 'tienda') {
+                flows = [
+                    "1. <strong>Catálogo Dinámico en WhatsApp:</strong> Consulta de tallas disponibles con respuesta inmediata.",
+                    "2. <strong>Gestor de Pagos Móvil / Zelle:</strong> Verificación y notificación automática de pedidos confirmados.",
+                    "3. <strong>Seguimiento de Delivery:</strong> Alertas automáticas al cliente cuando su pedido va en camino en San Cristóbal."
+                ];
+            } else if (biz === 'servicios') {
+                flows = [
+                    "1. <strong>Agendamiento Inteligente:</strong> Sincronización de citas directamente al calendario con confirmación por WhatsApp.",
+                    "2. <strong>Calificación de Leads (IA):</strong> El bot evalúa el presupuesto del cliente antes de agendar llamada.",
+                    "3. <strong>Resúmenes Automáticos:</strong> Notas de reuniones transcritas e enviadas por correo mediante n8n."
+                ];
+            } else {
+                flows = [
+                    "1. <strong>Toma de Pedidos por IA:</strong> Menú interactivo y registro de notas de entrega automatizado.",
+                    "2. <strong>Asistente de Delivery:</strong> Asignación automática de motorizado según zona urbana.",
+                    "3. <strong>Encuestas de Satisfacción:</strong> Envío automático 1 hora después de entregado el pedido."
+                ];
+            }
+
+            content.innerHTML = flows.join('<br>');
+        }
+    </script>
+</body>
+</html>
